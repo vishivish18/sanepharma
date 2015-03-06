@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SanePharma </title>
+        <link href="css/main.css" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+        
+    </head>        
+<body>
+
+    
+ <div class="container">
+     
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home">SanePharma</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Dashboard</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Products</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Add Product</a></li>
+            <li><a href="#">Update Product</a></li>
+            <li><a href="#">Search</a></li>
+          </ul>
+        </li>
+        
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Party</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Add Manufacturer</a></li>
+            <li><a href="#">Add Stockist</a></li>
+            <li><a href="#">Add Employee</a></li>
+            <li><a href="#">Search</a></li>
+            
+          </ul>
+        </li>
+          
+        
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sales</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Invoice Entry</a></li>
+            <li><a href="#">Create Bill Header</a></li>
+            <li><a href="#">Sales/Market Return</a></li>
+            <li><a href="#">Customer Wise Sales Return</a></li>
+            
+          </ul>
+        </li>
+        
+          
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Purchase</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Purchase Entry</a></li>
+            <li><a href="#">Purchase Book</a></li>
+            <li><a href="#">Product Wise purchase</a></li>
+            <li><a href="#">Credit Note Entry</a></li>
+            <li><a href="#">Debit Note Entry</a></li>
+            <li><a href="#">Search</a></li>
+            
+          </ul>
+        </li>
+          
+          
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Print Stock Ledger</a></li>
+            <li><a href="#">Print A/C ledger</a></li>
+            <li><a href="#">Outstandings</a></li>
+            <li><a href="#">Statements</a></li>
+            <li><a href="#">Payment Reminder</a></li>
+            
+          </ul>
+        </li>
+          
+          
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Change Password</a></li>
+            <li><a href="#">Report A Bug</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">About</a></li>
+            
+          </ul>
+        </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+     
+  <form class="form-inline" role="form" style="position:absolute; top:-60px; z-index:-1;" method="post" action="addproducts">
+    
+    <table border="0">
+        <tr>
+            <td height="100" width="350">
+                 <div class="form-group">
+                      <label for="pcode">Product Code:</label>
+                      <input type="text" class="form-control" id="pcode" placeholder="Enter Unique code">
+                 </div>
+            </td>
+            
+            <td>
+                <div class="form-group">
+                      <label for="pname">Product Name:</label>
+                      <input type="text" class="form-control" id="pname" placeholder="Enter Product Name">
+                </div>
+            </td>
+            
+            <td>
+                <div class="form-group">
+                      <label for="ppacking">Packing:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input type="text" class="form-control" id="ppacking" placeholder="Packing details">
+                </div>  
+            </td>
+        </tr>    
+          </br></br></br></br>
+    
+        
+        <tr>
+    
+            <td height="100" width="350">
+                <div class="form-group">
+                      <label for="pcompany">Company:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input type="text" class="form-control" id="pcompany" placeholder="Enter Company Name">
+                </div>
+            </td>
+            
+            <td>
+            
+                <div class="form-group">
+                      <label for="psalestax">Sales Tax as :</label>&nbsp;&nbsp;
+                      <input type="text" class="form-control" id="psalestax" value="10%">
+                </div>
+            </td>
+            
+            <td>
+            
+                <div class="form-group">
+                      <label for="pdiscount">Purchase Discount:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input type="text" class="form-control" id="pdiscount" value="0%">
+                </div>  
+            </td>
+        </tr>
+        </br></br></br></br>
+
+        <tr>
+            <td height="100" width="350">
+                <div class="form-group">
+                  <label for="pboxsize">Box/Case Size:</label>
+                  <input type="text" class="form-control" id="pboxsize" placeholder="10' X 6'">
+                </div>
+            </td> 
+            <td width="350">
+                <div class="form-group">
+                  <label for="ppurchase">Purchase as :</label>&nbsp;&nbsp;
+                  <input type="text" class="form-control" id="ppurchase" placeholder="Purchase Cost">
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                  <label for="pmrp">Maximum Retail Price :</label>
+                  <input type="text" class="form-control" id="pmrp" placeholder="Rs . MRP">
+                </div>  
+            </td>
+        </tr>    
+  </table>  
+    </br></br></br></br>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-warning">Reset</button>
+  </form>
+
+     
+  
+</div>    
+    <script src="jquery/dist/jquery.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.js"></script>
+    
+</body>
+</html>
+

@@ -13,6 +13,9 @@ app.set('views',path.join(__dirname,'views'));
 app.use(bodyParser());
 app.use(express.static(path.join(__dirname,'bower_components')));
 
+
+
+
 ////// define routes
 
 var todoItems = [
@@ -39,6 +42,13 @@ res.render('home');
 
 });
 
+
+app.get('/add-product', function(req,res){
+res.render('add_product');
+
+});
+
+
 app.post('/add',function(req,res){
     var newItem = req.body.newItem;
     todoItems.push({
@@ -47,6 +57,22 @@ app.post('/add',function(req,res){
     });
     
     res.redirect('/');
+});
+
+
+app.post('/addproducts',function(req,res,next){
+    var MongoClient = require('mongodb').MongoClient;
+
+    // Connect to the db
+    MongoClient.connect("mongodb://localhost:27017/sanetestdb", function(err, db) {
+      if(!err) {
+        console.log("We are connected");
+        db.createCollection('test');
+      }
+    });
+    
+    
+
 });
 
 

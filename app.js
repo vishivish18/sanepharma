@@ -52,6 +52,12 @@ res.render('search_product');
 });
 
 
+app.get('/add-manufacturer', function(req,res){
+res.render('add_manufacturer');
+
+});
+
+
 
 app.post('/add',function(req,res){
     var newItem = req.body.newItem;

@@ -9,7 +9,7 @@ body
 
 a:link {color:#333;}      /* unvisited link */
 a:visited {color:#000;}  /* visited link */
-a:hover {color:#fd5725;}  /* mouse over link */
+a:hover {color:##000; text-underline-position: below; }  /* mouse over link */
 a:active {color:#fd5725;}  /* selected link */
 
 /**************Global styling ends !********************************/
@@ -22,7 +22,8 @@ a:active {color:#fd5725;}  /* selected link */
 
 
 ul.nav li.dropdown:hover ul.dropdown-menu{
-    display: block;    
+    display: block;
+    color:black;
  }
 
 #left-div

@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
+var mongoose = require('mongoose');
 
 /////configure app
 
@@ -18,14 +19,6 @@ app.use(express.static(path.join(__dirname,'bower_components')));
 
 ////// define routes
 
-var todoItems = [
-            {id : 1, dsec: 'foo'},
-            {id : 2, dsec: 'bar'},
-            {id : 3, dsec: 'baz'}
-            
-        ];
-
-
 app.get('/', function(req,res){
 res.render('index',{
 
@@ -36,6 +29,11 @@ res.render('index',{
 
 });
 
+
+app.get('/login', function(req,res){
+res.render('login');
+
+});
 
 app.get('/home', function(req,res){
 res.render('home');
@@ -48,6 +46,12 @@ res.render('add_product');
 
 });
 
+app.get('/search-product', function(req,res){
+res.render('search_product');
+
+});
+
+
 
 app.post('/add',function(req,res){
     var newItem = req.body.newItem;
@@ -59,21 +63,70 @@ app.post('/add',function(req,res){
     res.redirect('/');
 });
 
-
-app.post('/addproducts',function(req,res,next){
-    var MongoClient = require('mongodb').MongoClient;
-
-    // Connect to the db
-    MongoClient.connect("mongodb://localhost:27017/sanetestdb", function(err, db) {
+mongoose.connect("mongodb://localhost:27017/sanetestdb", function(err, db) {
       if(!err) {
         console.log("We are connected");
-        db.createCollection('test');
+        
+        
       }
     });
+
+var Schema = mongoose.Schema;
+var productSchema = new Schema({
+pcode : String,
+pname : String,
+ppacking : String,
+pcompany : String,
+psalestax : String,
+pdiscount : String,   
+pboxsize : String,    
+ppurchase : String, 
+pmrp : String
     
+});
+
+var products = mongoose.model('products', productSchema);
+
+
+
+app.post('/addproducts',function(req,res,next){
+    var pcodevar = req.body.pcode;
+    var pnamevar = req.body.pname;
+    var ppackingvar = req.body.ppacking;
+    var pcompanyvar = req.body.pcompany;
+    var psalestaxvar = req.body.psalestax;
+    var pdiscountvar = req.body.pdiscount;
+    var pboxsizevar = req.body.pboxsize;
+    var ppurchasevar = req.body.ppurchase;
+    var pmrpvar = req.body.pmrp;
+    
+    var savedproduct = new products({
+        pcode : pcodevar,
+        pname : pnamevar,
+        ppacking : ppackingvar,
+        pcompany : pcompanyvar,
+        psalestax : psalestaxvar,
+        pdiscount : pdiscountvar,   
+        pboxsize : pboxsizevar,    
+        ppurchase : ppurchasevar, 
+        pmrp : pmrpvar
     
 
+        });
+
+        savedproduct.save(function (err, data) {
+        if (err) console.log(err);
+        else console.log('Saved : ', data );
+        res.redirect('/add-product');
+        });
+
+        
+        
 });
+
+
+
+
 
 
 app.listen(1337,function(){

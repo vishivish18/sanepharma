@@ -22,9 +22,9 @@
         <li><a href="#">Dashboard</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Products</a>
           <ul class="dropdown-menu">
-            <li><a href="#">Add Product</a></li>
+            <li><a href="/add-product">Add Product</a></li>
             <li><a href="#">Update Product</a></li>
-            <li><a href="/search-product">Search</a></li>
+            <li><a href="#">Search</a></li>
           </ul>
         </li>
         
@@ -90,9 +90,17 @@
     </div>
   </div>
 </nav>
+    
+<form class="navbar-form navbar-center" role="search">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Enter Product Code/ Name">
+    </div>
+    <button type="submit" class="btn btn-warning">Search <span class="glyphicon glyphicon-search"></span></button>
+</form>
+
+</br></br></br></br>
      
-     
-  <form class="form-inline" role="form" style="position:absolute; top:-60px; z-index:-1;" method="post" action="/addproducts">
+<form class="form-inline" role="form" style="position:absolute; top:-10px; z-index:-1;" method="post" action="/addproducts">
     
     <table border="0">
         <tr>
@@ -169,56 +177,16 @@
         </tr>    
   </table>  
     </br></br></br></br>
-    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Save</button>
-    <button type="reset" class="btn btn-warning">Reset</button>
+    
    
   </form>
 
- 
-
-
-    <div class="modal fade" id="myModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Success</h4>
-          </div>
-          <div class="modal-body">
-            <p>Your data has been saved successfully !</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-
-
-    <div class="modal fade" id="myModal2">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">About</h4>
-          </div>
-          <div class="modal-body">
-            <p>The Service is built by Specta</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-
-
-
-
+      
+     
+     
+     
+     
+     
 </div>    
     <script src="jquery/dist/jquery.js"></script>
     <script src="bootstrap/dist/js/bootstrap.js"></script>

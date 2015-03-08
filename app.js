@@ -131,8 +131,26 @@ app.post('/addproducts',function(req,res,next){
 });
 
 
-
-
+app.post('/searchproduct', function(req,res,next){
+    
+    
+    products.find({ 'pcode': req.body.searchvalue }, function (err, docs) {
+        // docs is an array
+        if(err)
+        {
+            console.log("error");
+        }
+        else
+            console.log("No error");
+            res.json(docs);
+            
+            
+        
+        
+    });
+    //res.json(req.body.searchvalue);
+    
+});
 
 
 app.listen(1337,function(){

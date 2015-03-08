@@ -30,7 +30,7 @@
         
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Party</a>
           <ul class="dropdown-menu">
-            <li><a href="#">Add Manufacturer</a></li>
+            <li><a href="/add-manufacturer">Add Manufacturer</a></li>
             <li><a href="#">Add Stockist</a></li>
             <li><a href="#">Add Employee</a></li>
             <li><a href="#">Search</a></li>
@@ -91,9 +91,9 @@
   </div>
 </nav>
     
-<form class="navbar-form navbar-center" role="search">
+<form class="navbar-form navbar-center" role="search" action="/searchproduct" method="post">
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Enter Product Code/ Name">
+        <input type="text" class="form-control" name="searchvalue" placeholder="Enter Product Code/ Name">
     </div>
     <button type="submit" class="btn btn-warning">Search <span class="glyphicon glyphicon-search"></span></button>
 </form>
@@ -107,7 +107,7 @@
             <td height="100" width="350">
                  <div class="form-group">
                       <label for="pcode">Product Code:</label>
-                      <input type="text" class="form-control" name="pcode" placeholder="Enter Unique code">
+                      <input type="text" class="form-control" name="pcode" placeholder="Enter Unique code" >
                  </div>
             </td>
             
